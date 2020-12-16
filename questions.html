@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+
+  <ul>
+    <li><a href="index.html">Main</a></li>
+    <li><a href="social-media-advantages.html">Advantages</a></li>
+    <li><a href="social-media-issues.html">Issues</a></li>
+    <li><a href="questions.html">Questions</a></li>
+  </ul>
+  <!-- Use any element to open the sidenav -->
+  <div class="header">
+    <h1>Questions</h1>
+  </div>
+
+<div class="main">
+<button type="button "class="collapsible">Questions about Privacy</button>
+  <div class="content">
+    <p>One article, <a href="https://www.nytimes.com/2018/04/11/technology/facebook-privacy-hearings.html" target="_blank">What You Don’t Know About How Facebook Uses Your Data</a>, implies that Zuckerburg gathered people's personal data by using artificial intelligence.</p>
+    <p>What does this say about how much freedom we have?</p>
+    <p>What does this say about our desire for pleasurable things, especially when this comes at a cost?</p>
+  </div>
+
+<button type="button" class="collapsible">Questions about Mental Well Being</button>
+  <div class="content">
+    <p>How can we effectively address our concerns about our children's well being, particularly when we think that social media is the root of the problem?</p>
+  </div>
+</section>
+</div>
+
+
+
+  <div class="container">
+    <div class="desc">
+      <p>LET'S TALK</p>
+      <p>Feel free to share any thoughts, or questions about these things.</p>
+    </div>
+        <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name..">
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+<script>
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>

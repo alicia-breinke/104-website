@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+
+  <ul>
+    <li><a href="index.html">Main</a></li>
+    <li><a href="social-media-advantages.html">Advantages</a></li>
+    <li><a href="social-media-issues.html">Issues</a></li>
+    <li><a href="questions.html">Questions</a></li>
+  </ul>
+
+  <!-- Use any element to open the sidenav -->
+  <header>
+    <h2>Issues with Social Media and Development</h2>
+    <div class="desc">
+    <p>As already implied, social media has its advantages.  At the same time, though, there are several other drawbacks- such as misinformation, issues with privacy, issues with mental well being, and the issue of media addiction.</p>
+  </div>
+</header>
+
+<div class="row">
+  <div class="column">
+    <img src="quote.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="text.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="sadness.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="phone.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1</div>
+      <img src="quote.jpg" style="width:100%">
+      <div class="desc">
+      <h2>The Issue of Misinformation</h2>
+      <p>As already implied, social media has its advantages.  At the same time, however, it often raises questions about the legitimacy of the information that it provides.  Moreover, this misinformation can have major consequences but there are some companies that have yet to effectively address this issue.  “Social Media and Fake News in the 2016 Election,” for instance, suggests that this news can be misleading for peoples’ beliefs, make it harder to select quality candidates, and make it hard for consumers to distinguish inaccurate information from legitimate information.  Additionially, Kaya Yurieff’s “How Twitter, Facebook and YouTube are handling election misinformation,” suggests that the three major social media platforms- Twitter, YouTube, and Facebook- used different strategies to curve misleading claims about the election.  As stated by Yurieff, “Twitter has gone as far as reducing users' ability to share misleading posts, while Facebook is slapping labels on misinformation, but not hindering sharing. YouTube is taking arguably the least aggressive action, by relying on a single label -- which reminds people that US election results may not be final -- on any and all content related to the election.”
+      </p>
+  </div>
+  </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2</div>
+      <img src="text.jpg" style="width:100%">
+      <div class="desc">
+        <h2>The Issue of Privacy</h2>
+      </div>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3</div>
+      <img src="sadness.jpg" style="width:100%">
+      <div class="desc">
+        <h2>The Issue of Mental Well Being</h2>
+    </div>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4</div>
+    <img src="phone.jpg" style="width:100%">
+    <div class="desc">
+      <h2>The Issue of Media Addiction</h2>
+    </div>
+  </div>
+
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+       <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+</body>
+</html>
